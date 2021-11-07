@@ -1,0 +1,1449 @@
+*May/2019
+*Tehran, Shahid Beheshti University
+*Author: Hadi_Hasanzade
+********************************
+*****************************
+*************************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=1 if inrange(year,1962,1970)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==1
+replace x = x[_n-1] if missing(x) & N==2 & year8==1 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==1 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==1 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==1 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==1 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==1 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==1 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==1 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==1 & export_rca>1
+keep if year==1970
+keep if x==1
+replace year=1966 if year==1970
+save "E:/simaee/Data2.dta", replace
+********************************************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=2 if inrange(year,1963,1971)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==2
+replace x = x[_n-1] if missing(x) & N==2 & year8==2 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==2 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==2 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==2 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==2 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==2 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==2 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==2 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==2 & export_rca>1
+keep if year==1971
+keep if x==1
+replace year=1967 if year==1971
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+********************************************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=3 if inrange(year,1964,1972)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==3
+replace x = x[_n-1] if missing(x) & N==2 & year8==3 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==3 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==3 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==3 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==3 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==3 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==3 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==3 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==3 & export_rca>1
+keep if year==1972
+keep if x==1
+replace year=1968 if year==1972
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=4 if inrange(year,1965,1973)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==4
+replace x = x[_n-1] if missing(x) & N==2 & year8==4 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==4 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==4 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==4 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==4 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==4 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==4 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==4 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==4 & export_rca>1
+keep if year==1973
+keep if x==1
+replace year=1969 if year==1973
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=5 if inrange(year,1966,1974)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==5
+replace x = x[_n-1] if missing(x) & N==2 & year8==5 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==5 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==5 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==5 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==5 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==5 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==5 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==5 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==5 & export_rca>1
+keep if year==1974
+keep if x==1
+replace year=1970 if year==1974
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=6 if inrange(year,1971,1975)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==6
+replace x = x[_n-1] if missing(x) & N==2 & year8==6 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==6 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==6 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==6 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==6 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==6 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==6 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==6 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==6 & export_rca>1
+keep if year==1975
+keep if x==1
+replace year=1971 if year==1975
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=7 if inrange(year,1968,1976)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==7
+replace x = x[_n-1] if missing(x) & N==2 & year8==7 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==7 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==7 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==7 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==7 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==7 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==7 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==7 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==7 & export_rca>1
+keep if year==1976
+keep if x==1
+replace year=1972 if year==1976
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=8 if inrange(year,1969,1977)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==8
+replace x = x[_n-1] if missing(x) & N==2 & year8==8 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==8 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==8 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==8 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==8 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==8 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==8 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==8 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==8 & export_rca>1
+keep if year==1977
+keep if x==1
+replace year=1973 if year==1977
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=9 if inrange(year,1970,1978)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==9
+replace x = x[_n-1] if missing(x) & N==2 & year8==9 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==9 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==9 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==9 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==9 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==9 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==9 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==9 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==9 & export_rca>1
+keep if year==1978
+keep if x==1
+replace year=1974 if year==1978
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=10 if inrange(year,1971,1979)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==10
+replace x = x[_n-1] if missing(x) & N==2 & year8==10 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==10 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==10 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==10 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==10 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==10 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==10 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==10 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==10 & export_rca>1
+keep if year==1979
+keep if x==1
+replace year=1975 if year==1979
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=11 if inrange(year,1972,1980)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==11
+replace x = x[_n-1] if missing(x) & N==2 & year8==11 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==11 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==11 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==11 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==11 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==11 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==11 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==11 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==11 & export_rca>1
+keep if year==1980
+keep if x==1
+replace year=1976 if year==1980
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=12 if inrange(year,1973,1981)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==12
+replace x = x[_n-1] if missing(x) & N==2 & year8==12 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==12 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==12 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==12 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==12 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==12 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==12 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==12 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==12 & export_rca>1
+keep if year==1981
+keep if x==1
+replace year=1977 if year==1981
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=13 if inrange(year,1974,1982)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==13
+replace x = x[_n-1] if missing(x) & N==2 & year8==13 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==13 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==13 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==13 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==13 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==13 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==13 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==13 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==13 & export_rca>1
+keep if year==1982
+keep if x==1
+replace year=1978 if year==1982
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=14 if inrange(year,1975,1983)
+********
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==14
+replace x = x[_n-1] if missing(x) & N==2 & year8==14 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==14 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==14 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==14 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==14 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==14 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==14 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==14 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==14 & export_rca>1
+keep if year==1983
+keep if x==1
+replace year=1979 if year==1983
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=15 if inrange(year,1976,1984)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==15
+replace x = x[_n-1] if missing(x) & N==2 & year8==15 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==15 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==15 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==15 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==15 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==15 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==15 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==15 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==15 & export_rca>1
+keep if year==1984
+keep if x==1
+replace year=1980 if year==1984
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=16 if inrange(year,1977,1985)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==16
+replace x = x[_n-1] if missing(x) & N==2 & year8==16 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==16 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==16 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==16 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==16 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==16 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==16 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==16 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==16 & export_rca>1
+keep if year==1985
+keep if x==1
+replace year=1981 if year==1985
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=17 if inrange(year,1978,1986)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==17
+replace x = x[_n-1] if missing(x) & N==2 & year8==17 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==17 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==17 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==17 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==17 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==17 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==17 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==17 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==17 & export_rca>1
+keep if year==1986
+keep if x==1
+replace year=1982 if year==1986
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=18 if inrange(year,1979,1987)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==18
+replace x = x[_n-1] if missing(x) & N==2 & year8==18 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==18 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==18 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==18 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==18 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==18 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==18 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==18 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==18 & export_rca>1
+keep if year==1987
+keep if x==1
+replace year=1983 if year==1987
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=19 if inrange(year,1980,1988)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==19
+replace x = x[_n-1] if missing(x) & N==2 & year8==19 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==19 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==19 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==19 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==19 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==19 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==19 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==19 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==19 & export_rca>1
+keep if year==1988
+keep if x==1
+replace year=1984 if year==1988
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=20 if inrange(year,1981,1989)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==20
+replace x = x[_n-1] if missing(x) & N==2 & year8==20 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==20 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==20 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==20 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==20 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==20 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==20 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==20 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==20 & export_rca>1
+keep if year==1989
+keep if x==1
+replace year=1985 if year==1989
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=21 if inrange(year,1982,1990)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==21
+replace x = x[_n-1] if missing(x) & N==2 & year8==21 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==21 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==21 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==21 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==21 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==21 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==21 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==21 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==21 & export_rca>1
+keep if year==1990
+keep if x==1
+replace year=1986 if year==1990
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=22 if inrange(year,1983,1991)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==22
+replace x = x[_n-1] if missing(x) & N==2 & year8==22 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==22 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==22 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==22 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==22 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==22 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==22 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==22 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==22 & export_rca>1
+keep if year==1991
+keep if x==1
+replace year=1987 if year==1991
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=23 if inrange(year,1984,1992)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==23
+replace x = x[_n-1] if missing(x) & N==2 & year8==23 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==23 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==23 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==23 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==23 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==23 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==23 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==23 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==23 & export_rca>1
+keep if year==1992
+keep if x==1
+replace year=1988 if year==1992
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=24 if inrange(year,1985,1993)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==24
+replace x = x[_n-1] if missing(x) & N==2 & year8==24 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==24 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==24 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==24 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==24 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==24 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==24 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==24 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==24 & export_rca>1
+keep if year==1993
+keep if x==1
+replace year=1989 if year==1993
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=25 if inrange(year,1986,1994)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==25
+replace x = x[_n-1] if missing(x) & N==2 & year8==25 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==25 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==25 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==25 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==25 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==25 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==25 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==25 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==25 & export_rca>1
+keep if year==1994
+keep if x==1
+replace year=1990 if year==1994
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=26 if inrange(year,1987,1995)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==26
+replace x = x[_n-1] if missing(x) & N==2 & year8==26 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==26 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==26 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==26 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==26 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==26 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==26 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==26 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==26 & export_rca>1
+keep if year==1995
+keep if x==1
+replace year=1991 if year==1995
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=27 if inrange(year,1988,1996)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==27
+replace x = x[_n-1] if missing(x) & N==2 & year8==27 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==27 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==27 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==27 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==27 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==27 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==27 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==27 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==27 & export_rca>1
+keep if year==1996
+keep if x==1
+replace year=1992 if year==1996
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=28 if inrange(year,1989,1997)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==28
+replace x = x[_n-1] if missing(x) & N==2 & year8==28 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==28 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==28 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==28 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==28 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==28 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==28 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==28 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==28 & export_rca>1
+keep if year==1997
+keep if x==1
+replace year=1993 if year==1997
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=29 if inrange(year,1990,1998)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==29
+replace x = x[_n-1] if missing(x) & N==2 & year8==29 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==29 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==29 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==29 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==29 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==29 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==29 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==29 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==29 & export_rca>1
+keep if year==1998
+keep if x==1
+replace year=1994 if year==1998
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=30 if inrange(year,1991,1999)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==30
+replace x = x[_n-1] if missing(x) & N==2 & year8==30 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==30 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==30 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==30 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==30 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==30 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==30 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==30 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==30 & export_rca>1
+keep if year==1999
+keep if x==1
+replace year=1995 if year==1999
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=31 if inrange(year,1992,2000)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==31
+replace x = x[_n-1] if missing(x) & N==2 & year8==31 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==31 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==31 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==31 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==31 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==31 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==31 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==31 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==31 & export_rca>1
+keep if year==2000
+keep if x==1
+replace year=1996 if year==2000
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=32 if inrange(year,1993,2001)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==32
+replace x = x[_n-1] if missing(x) & N==2 & year8==32 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==32 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==32 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==32 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==32 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==32 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==32 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==32 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==32 & export_rca>1
+keep if year==2001
+keep if x==1
+replace year=1997 if year==2001
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=33 if inrange(year,1994,2002)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==33
+replace x = x[_n-1] if missing(x) & N==2 & year8==33 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==33 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==33 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==33 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==33 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==33 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==33 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==33 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==33 & export_rca>1
+keep if year==2002
+keep if x==1
+replace year=1998 if year==2002
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=34 if inrange(year,1995,2003)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==34
+replace x = x[_n-1] if missing(x) & N==2 & year8==34 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==34 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==34 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==34 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==34 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==34 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==34 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==34 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==34 & export_rca>1
+keep if year==2003
+keep if x==1
+replace year=1999 if year==2003
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=35 if inrange(year,1996,2004)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==35
+replace x = x[_n-1] if missing(x) & N==2 & year8==35 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==35 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==35 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==35 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==35 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==35 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==35 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==35 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==35 & export_rca>1
+keep if year==2004
+keep if x==1
+replace year=2000 if year==2004
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=36 if inrange(year,1997,2005)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==36
+replace x = x[_n-1] if missing(x) & N==2 & year8==36 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==36 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==36 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==36 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==36 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==36 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==36 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==36 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==36 & export_rca>1
+keep if year==2005
+keep if x==1
+replace year=2001 if year==2005
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data1.dta" 
+save "E:/simaee/Data1.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=37 if inrange(year,1998,2006)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==37
+replace x = x[_n-1] if missing(x) & N==2 & year8==37 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==37 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==37 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==37 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==37 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==37 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==37 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==37 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==37 & export_rca>1
+keep if year==2006
+keep if x==1
+replace year=2002 if year==2006
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=38 if inrange(year,1999,2007)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==38
+replace x = x[_n-1] if missing(x) & N==2 & year8==38 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==38 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==38 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==38 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==38 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==38 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==38 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==38 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==38 & export_rca>1
+keep if year==2007
+keep if x==1
+replace year=2003 if year==2007
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=39 if inrange(year,2000,2008)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==39
+replace x = x[_n-1] if missing(x) & N==2 & year8==39 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==39 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==39 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==39 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==39 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==39 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==39 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==39 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==39 & export_rca>1
+keep if year==2008
+keep if x==1
+replace year=2004 if year==2008
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=40 if inrange(year,2001,2009)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==40
+replace x = x[_n-1] if missing(x) & N==2 & year8==40 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==40 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==40 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==40 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==40 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==40 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==40 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==40 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==40 & export_rca>1
+keep if year==2009
+keep if x==1
+replace year=2005 if year==2009
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=41 if inrange(year,2002,2010)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==41
+replace x = x[_n-1] if missing(x) & N==2 & year8==41 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==41 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==41 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==41 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==41 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==41 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==41 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==41 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==41 & export_rca>1
+keep if year==2010
+keep if x==1
+replace year=2006 if year==2010
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=42 if inrange(year,2003,2011)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==42
+replace x = x[_n-1] if missing(x) & N==2 & year8==42 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==42 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==42 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==42 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==42 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==42 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==42 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==42 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==42 & export_rca>1
+keep if year==2011
+keep if x==1
+replace year=2007 if year==2011
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=43 if inrange(year,2004,2012)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==43
+replace x = x[_n-1] if missing(x) & N==2 & year8==43 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==43 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==43 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==43 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==43 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==43 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==43 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==43 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==43 & export_rca>1
+keep if year==2012
+keep if x==1
+replace year=2008 if year==2012
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=44 if inrange(year,2005,2013)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==44
+replace x = x[_n-1] if missing(x) & N==2 & year8==44 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==44 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==44 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==44 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==44 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==44 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==44 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==44 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==44 & export_rca>1
+keep if year==2013
+keep if x==1
+replace year=2009 if year==2013
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=45 if inrange(year,2006,2014)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==45
+replace x = x[_n-1] if missing(x) & N==2 & year8==45 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==45 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==45 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==45 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==45 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==45 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==45 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==45 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==45 & export_rca>1
+keep if year==2014
+keep if x==1
+replace year=2010 if year==2014
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+********************************************
+**********************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=46 if inrange(year,2007,2015)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==46
+replace x = x[_n-1] if missing(x) & N==2 & year8==46 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==46 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==46 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==46 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==46 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==46 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==46 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==46 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==46 & export_rca>1
+keep if year==2015
+keep if x==1
+replace year=2011 if year==2015
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+*********************************************
+***************************
+clear
+use "E:/simaee/Mydata.dta"
+**********
+gen year8=.
+replace year8=47 if inrange(year,2008,2016)
+*******
+*******************************
+bysort sitc_product_code location_code year8 (year) : gen N=_n
+gen x=.
+replace x=0 if export_rca<1 & N==1 & year8==47
+replace x = x[_n-1] if missing(x) & N==2 & year8==47 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==3 & year8==47 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==4 & year8==47 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==5 & year8==47 & export_rca<1
+replace x = x[_n-1] if missing(x) & N==6 & year8==47 & export_rca>1
+replace x=1 if x==0 & export_rca>1 & N==6
+replace x = x[_n-1] if missing(x) & N==7 & year8==47 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==8 & year8==47 & export_rca>1
+replace x = x[_n-1] if missing(x) & N==9 & year8==47 & export_rca>1
+*replace x = x[_n-1] if missing(x) & N==10 & year8==46 & export_rca>1
+keep if year==2016
+keep if x==1
+replace year=2012 if year==2016
+save C:\Users\Hadi-H\Desktop\buffer , replace
+append using "E:\simaee/Data2.dta" 
+save "E:/simaee/Data2.dta", replace
+*********************************************
+*************************************************************************
+*********************************************
+
+clear
+use "E:/simaee/MyData.dta", clear
+merge m:m year location_code sitc_product_code using "E:\simaee\Data2.dta"
+drop _merge
+merge m:1 location_code using "E:/simaee/country_names,0211"
+drop id _merge
+keep if inresearch==1
+********
+gen density= 1- (distance)
+drop if export_rca==.
+********
+***************************************************
+gen option_set= location_code if export_rca<1
+egen p1= sd (density), by (option_set year)
+egen p2= mean (density), by (option_set year)
+gen wpcy= (density-p2)/p1
+drop p1 p2
+*******************************
+egen p1= sd (pci), by (option_set year)
+egen p2= mean (pci), by (option_set year)
+gen pcipcy= (pci-p2)/p1
+drop p1 p2
+**************************************
+gen year3=.
+replace year3=1 if inrange(year,1970,1972)
+replace year3=2 if inrange(year,1973,1975)
+replace year3=3 if inrange(year,1976,1978)
+replace year3=4 if inrange(year,1979,1981)
+replace year3=5 if inrange(year,1982,1984)
+replace year3=6 if inrange(year,1985,1987)
+replace year3=7 if inrange(year,1988,1990)
+replace year3=8 if inrange(year,1991,1993)
+replace year3=9 if inrange(year,1994,1996)
+replace year3=10 if inrange(year,1997,1999)
+replace year3=11 if inrange(year,2000,2002)
+replace year3=12 if inrange(year,2003,2005)
+replace year3=13 if inrange(year,2006,2008)
+replace year3=14 if inrange(year,2009,2011)
+********
+***************************
+bys year location_code sitc_product_code: egen Relative_Complexity = mean(pcipcy)
+bys year location_code sitc_product_code: egen Relative_Density = mean(wpcy)
+****************************
+replace x1=0 if x1==.
+******************
+******************************
+/// Figure 2
+twoway (scatter Relative_Density Relative_Complexity if inrange(year,1984,1986) & x1<1) /// 
+(scatter Relative_Density Relative_Complexity if inrange(year,1984,1986) & x1==1 , yline(0) xline(0)) if location_code=="CHL"
+
+*******************************
+twoway (scatter Relative_Density Relative_Complexity if inrange(year,1994,1996) & x1<1) /// 
+(scatter Relative_Density Relative_Complexity if inrange(year,1994,1996) & x1==1 , yline(0) xline(0)) if location_code=="KOR"
+
+*****************************************
+/// Figure 3 
+dpplot Relative_Density if x1==1 & inrange(year,1970,2010), xline(0)
+dpplot Relative_Complexity if x1==1 & inrange(year,1970,2010), xline(0)
+****************************************
+hist Relative_Complexity if x1==1 & inrange(year,1970,2010), xline(0)
+hist Relative_Density if x1==1 & inrange(year,1970,2010), xline(0)
+
+******************************
+//* Figure 4 a
+reg Relative_Density Relative_Complexity if x1==1 & inrange(year,1970,2010)
+avplot Relative_Complexity , yline(0) xline(0)
+***************************************
+******************************
+******************************
+/// Figure 4 b
+bys location_code: egen Relative_Complexityintire = mean(pcipcy) if x1==1
+bys location_code: egen Relative_Densityintire = mean(wpcy) if x1==1
+******************
+reg Relative_Densityintire Relative_Complexityintire if x1==1 & inrange(year,1970,2010)
+avplot Relative_Complexityintire , mlab(location_code)
+
+*********************
+***
+* Assumption
+dpplot Relative_Density if x1==1 & stage==3 & inrange(year,1970,2010), xline(0)
+dpplot Relative_Complexity if x1==1 & stage==1 & inrange(year,1970,2010), xline(0)
+**************************************
+dpplot Relative_Density if x1==1 & location_code=="KOR" & inrange(year,1970,2010), xline(0)
+dpplot Relative_Complexity if x1==1 & location_code=="KOR" & inrange(year,1970,2010), xline(0)
+****************************************
+*we want to know how much percent of country less than of mean in dpplot
+bys location_code year3: egen percentagec = mean(pcipcy) if x1==1
+bys location_code year3: egen percentaged = mean(wpcy) if x1==1
+**********************
+replace percentagec=0 if percentagec==.
+replace percentaged=0 if percentaged==.
+******************
+count if percentagec >0
+count if percentagec!=0
+************************
+count if percentaged >0
+count if percentaged!=0
+*******************************
+* Final Index in Paper
+bys year location_code : egen MeanRelativeComplexity = mean(Relative_Complexity)
+bys year location_code : egen MeanRelativeDensity = mean(Relative_Density)
+**************************
+bys year location_code: gen R1=Relative_Complexity-MeanRelativeComplexity
+bys year location_code: gen R2=Relative_Density-MeanRelativeDensity
+bys year location_code: egen Numerator=sum (R1*R2)
+*******
+bys year location_code: gen R3=(Relative_Complexity-MeanRelativeComplexity)^2
+bys year location_code: gen R4=(Relative_Density-MeanRelativeDensity)^2
+bys year location_code: egen DeNumerator=sum (R3*R4)
+bys year location_code: gen Rou= Numerator/DeNumerator
+*****************************************************
+******************
+* Figure 7.a
+reg Relative_Density Relative_Complexity if year==2010 & export_rca<1 & location_code=="KOR"
+avplot Relative_Complexity , yline(0) xline(0)
+**********************************
+* Figure 8.A
+twoway (line Rou year if export_rca<1 & location_code=="JPN") (line Rou year if export_rca<1 & location_code=="KOR") (line Rou year if export_rca<1 & location_code=="CHL") ///
+(line Rou year if export_rca<1 & location_code=="SGP") (line Rou year if export_rca<1 & location_code=="IRL") (line Rou year if export_rca<1 & location_code=="BRA") ///
+(line Rou year if export_rca<1 & location_code=="ESP") (line Rou year if export_rca<1 & location_code=="IRN"), ///
+ legend(label(1 "JPN") label(2 "KOR") label(3 "CHL") label(4 "SGP") label(5 "IRL") label(6 "BRA") label(7 "ESP"))
+**********************************
+* Figure 8.b
+twoway (scatter Rou sitc_eci if  export_rca<1 & inrange(year,1970,2010)) ///
+(scatter Rou sitc_eci if location_code=="KOR" &  export_rca<1 & inrange(year,1970,2010)) ///
+(scatter Rou sitc_eci if location_code=="BRA" &  export_rca<1 & inrange(year,1970,2010))
+***************************************
